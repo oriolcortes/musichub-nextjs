@@ -1,28 +1,40 @@
-# Template Base
+# 🎬 Sesión 1 — Estructura + Props + micro-interacción
 
-Plantilla base **agnóstica de lenguaje** para iniciar repos y derivar plantillas específicas (Node, PHP, Python, Go, etc.). Optimizada para uso con **VS Code** y edición directa en **GitHub**.
+## 🎯 Objetivos
 
-> Repo: <https://github.com/oriolcortes/template-base>
+- Comprender **JSX** y el uso de **props** en componentes.
+- Entender la **estructura básica** del directorio `app/` (App Router).
+- Implementar una **micro-interacción** con `useState` que cambie la UI al hacer clic.
 
-## ¿Qué incluye?
+## 🧩 Qué añadiremos a la demo
 
-- Ajustes de editor y estilos básicos (`.editorconfig`, `.gitattributes`, `.gitignore`, `.vscode`).
-- Linter de Markdown vía **GitHub Actions** (se ejecuta en cada push/PR).
-- Plantillas de **issues** (bug/mejora) y **pull request**.
-- Documentos básicos: `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, `LICENSE`, `CHANGELOG`.
+- `app/layout.js` (estructura base y Tailwind aplicado al `<body>`).
+- `app/_components/Header.js` (props + estilos con Tailwind).
+- `app/_components/WelcomeBanner.js` (props + `useState` para cambiar texto/tema).
+- `app/page.js` (composición de los componentes).
 
-## Uso
+> **Archivos tocados hoy:** `app/page.js`, `app/_components/Header.js`
 
-1. Crea un repo desde esta plantilla (o copia los archivos).
-2. Si vas a reutilizarla, marca el repo como **Template repository** (Settings → Features).
-3. Opcional: activa protección de rama en `main` y exige el check **Markdown Lint**.
+---
 
-## Derivados por lenguaje
+## 🧱 Pasos de la sesión
 
-En cada derivado añade lo específico del stack (dependencias, tests, lints, workflows adicionales).
-Convención sugerida de nombres: `template-{lenguaje|runtime}-{framework?}-{variant?}`
-Ej.: `template-node-express-docker`, `template-python-fastapi-docker`.
+1. Crear la estructura base con `layout.js`.
+2. Crear un componente `Header` que reciba props.
+3. Crear un componente `WelcomeBanner` con props y `useState`.
+4. Componerlos en `page.js`.
+5. Probar que al hacer clic cambia la UI.
 
-## Licencia
+---
 
-MIT (ver `LICENSE`).
+## 🧪 Prueba rápida
+
+Ejecuta el proyecto y comprueba:
+
+- El **Header** muestra el título pasado por props.
+- El **WelcomeBanner** recibe `title` y `subtitle`.
+- Los botones cambian **tema** y **saludo** mediante `useState`.
+
+```bash
+npm run dev
+```
