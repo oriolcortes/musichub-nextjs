@@ -1,0 +1,50 @@
+[
+  {
+    "id": "s1",
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "youtubeId": "fJ9rUzIMcZQ",
+    "year": 1975,
+    "tags": ["rock", "classic", "opera rock", "1970s"]
+  },
+  {
+    "id": "s2",
+    "title": "Ain't No Mountain High Enough",
+    "artist": "Marvin Gaye & Tammi Terrell",
+    "youtubeId": "ABfQuZqq8wg",
+    "year": 1967,
+    "tags": ["soul", "motown", "duet", "1960s"]
+  },
+  {
+    "id": "s3",
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "youtubeId": "09839DpTctU",
+    "year": 1976,
+    "tags": ["rock", "soft rock", "classic", "1970s"]
+  },
+  {
+    "id": "s4",
+    "title": "What's Up",
+    "artist": "4 Non Blondes",
+    "youtubeId": "6NXnxTNIWkc",
+    "year": 1993,
+    "tags": ["alternative", "pop rock", "female vocals", "1990s"]
+  },
+  {
+    "id": "s5",
+    "title": "Zombie",
+    "artist": "The Cranberries",
+    "youtubeId": "6Ejga4kJUts",
+    "year": 1994,
+    "tags": ["grunge", "alternative rock", "protest song", "1990s"]
+  },
+  {
+    "id": "s6",
+    "title": "I Don't Want to Miss a Thing",
+    "artist": "Aerosmith",
+    "youtubeId": "JkK8g6FMEXE",
+    "year": 1998,
+    "tags": ["rock ballad", "soundtrack", "love song", "1990s"]
+  }
+]

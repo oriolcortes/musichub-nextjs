@@ -1,5 +1,6 @@
 import './globals.css';
 import Header from './_components/Header';
+import Footer from './_components/Footer';
 
 export const metadata = {
   title: 'MusicHub • Sesión 1',
@@ -12,27 +13,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-dvh bg-white text-gray-900 antialiased">
         <Header title="MusicHub" />
         <main className="mx-auto max-w-4xl px-4 py-6">{children}</main>
-        <footer className="text-center text-xs text-gray-500 py-4 border-t">
-          <p>
-            <a
-              target="_blank"
-              href="https://icons8.com/icon/81TSi6Gqk0tm/music"
-              className="text-[#F50057] hover:underline"
-              rel="noopener noreferrer"
-            >
-              Music
-            </a>{' '}
-            icon by{' '}
-            <a
-              target="_blank"
-              href="https://icons8.com"
-              className="text-[#F50057] hover:underline"
-              rel="noopener noreferrer"
-            >
-              Icons8
-            </a>
-          </p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

@@ -29,4 +29,7 @@
     "refactor",
     "perf"
   ], // Lista de “scopes” sugeridos al redactar commits convencionales (puedes adaptarla a tus dominios)
+  "files.exclude": {
+    "**/.git": false
+  },
 }

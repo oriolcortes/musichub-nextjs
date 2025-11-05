@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function WelcomeBanner({ title, subtitle }) {
   const [dark, setDark] = useState(false);
@@ -20,10 +21,16 @@ export default function WelcomeBanner({ title, subtitle }) {
     >
       <div className="flex items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold">{title}</h2>
+          <h1 className="text-2xl font-bold">{title}</h1>
           {subtitle && (
             <p className="mt-1 text-sm opacity-80 font-medium">{subtitle}</p>
           )}
+          <Link
+            href="/songs"
+            className="text-[#F50057] underline underline-offset-4 mx-auto"
+          >
+            Ir a Songs
+          </Link>
           <p className="mt-4 text-lg font-semibold">
             {hola ? 'Hola 👋' : 'Adiós 👋'}
           </p>
