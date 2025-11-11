@@ -3,8 +3,8 @@ import Header from './_components/Header';
 import Footer from './_components/Footer';
 
 export const metadata = {
-  title: 'MusicHub • Sesión 1',
-  description: 'Demo incremental — Estructura + Props + micro-interacción',
+  title: 'MusicHub',
+  description: 'Demo incremental de una app de música con Next.js y React',
 };
 
 export default function RootLayout({ children }) {

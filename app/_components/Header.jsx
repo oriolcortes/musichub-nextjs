@@ -16,12 +16,6 @@ export default function Header({ title }) {
           {title}
         </h1>
         <nav className="text-sm flex items-center gap-6">
-          {/* <a
-            href="#"
-            className="text-gray-600 hover:text-[#F50057] transition-colors"
-          >
-            Inicio
-          </a> */}
           <Link
             href="/"
             className={`text-gray-600 hover:text-[#F50057] transition-colors ${isActive(

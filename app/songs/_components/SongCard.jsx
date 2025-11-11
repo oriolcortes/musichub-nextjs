@@ -1,11 +1,18 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function SongCard({ title, artist, youtubeId, onToggleLike }) {
+export default function SongCard({
+  id,
+  title,
+  artist,
+  youtubeId,
+  onToggleLike,
+}) {
   const [liked, setLiked] = useState(false);
 
   const thumb = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
-  const ytUrl = `https://www.youtube.com/watch?v=${youtubeId}`;
 
   function handleLike() {
     const next = !liked;
@@ -17,12 +24,14 @@ export default function SongCard({ title, artist, youtubeId, onToggleLike }) {
 
   return (
     <article className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden transition transform hover:scale-105 hover:shadow-md">
-      <div className="aspect-video w-full">
-        <img
+      <div className="relative aspect-video w-full">
+        <Image
           src={thumb}
           alt={`${title} — ${artist}`}
-          className="h-full w-full object-cover"
-          loading="lazy"
+          fill
+          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 320px"
+          className="object-cover"
+          priority={false} // lo mismo que lazy loading
         />
       </div>
       <div className="p-3 space-y-2">
@@ -47,13 +56,12 @@ export default function SongCard({ title, artist, youtubeId, onToggleLike }) {
             {liked ? '❤️' : '♡'} Like
           </button>
 
-          <a
-            href={ytUrl}
-            target="_blank"
+          <Link
+            href={`/songs/${id}`}
             className="ml-auto inline-flex items-center rounded-lg border border-[#F50057]/30 bg-[#F50057]/10 px-3 py-1.5 text-xs font-medium text-[#F50057] transition hover:bg-[#F50057]/15"
           >
-            ▶️ Play on YouTube
-          </a>
+            Ver detalle
+          </Link>
         </div>
       </div>
     </article>
