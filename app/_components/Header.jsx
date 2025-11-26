@@ -1,9 +1,12 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useFavorites } from '@/app/_contexts/FavoritesContext';
 
 export default function Header({ title }) {
   const pathname = usePathname();
+  const { favorites } = useFavorites();
+
   const isActive = (href) =>
     pathname === href
       ? 'underline underline-offset-4'
@@ -32,6 +35,12 @@ export default function Header({ title }) {
           >
             Songs
           </Link>
+
+          {/* Indicador de favoritos */}
+          <div className="flex items-center gap-1 text-sm text-gray-600">
+            <span>❤️</span>
+            <span>{favorites.length}</span>
+          </div>
         </nav>
       </div>
     </header>

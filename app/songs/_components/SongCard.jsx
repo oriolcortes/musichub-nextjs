@@ -1,26 +1,13 @@
 'use client';
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useFavorites } from '@/app/_contexts/FavoritesContext';
 
-export default function SongCard({
-  id,
-  title,
-  artist,
-  youtubeId,
-  onToggleLike,
-}) {
-  const [liked, setLiked] = useState(false);
+export default function SongCard({ id, title, artist, youtubeId }) {
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const favorite = isFavorite(id);
 
   const thumb = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
-
-  function handleLike() {
-    const next = !liked;
-    setLiked(next);
-
-    // Avisamos al padre para que actualice el contador global
-    if (typeof onToggleLike === 'function') onToggleLike(next);
-  }
 
   return (
     <article className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden transition transform hover:scale-105 hover:shadow-md">
@@ -44,16 +31,16 @@ export default function SongCard({
 
         <div className="flex items-center gap-2">
           <button
-            onClick={handleLike}
+            onClick={() => toggleFavorite(id)}
             className={`cursor-pointer rounded-lg px-3 py-1.5 text-sm font-medium transition
               ${
-                liked
+                favorite
                   ? 'bg-[#F50057] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }
             `}
           >
-            {liked ? '❤️' : '♡'} Like
+            {favorite ? '❤️ Quitar de favoritos' : '🤍 Añadir a favoritos'}
           </button>
 
           <Link
