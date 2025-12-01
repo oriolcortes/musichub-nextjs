@@ -13,7 +13,8 @@ export async function generateStaticParams() {
 
 // Generación dinámica de metadata por canción
 export async function generateMetadata({ params }) {
-  const song = await getSongById(params.id);
+  const { id } = await params;
+  const song = await getSongById(id);
   if (!song) {
     return {
       title: 'Canción no encontrada — MusicHub',
